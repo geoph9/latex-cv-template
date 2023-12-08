@@ -1,6 +1,6 @@
-# Single Column Latex CV Template
+# Minimal CV Template
 
-A simple latex template for a single column CV/resume. It is inspired by
+A simple latex template for a minimal, single column CV/resume. It is inspired by
 a bunch of other templates, components of which I have used throughout the
 years. Unfortunately, I didn't keep track of the authors of the templates
 that I've used so I can't give a proper thanks to them.

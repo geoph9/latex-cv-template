@@ -1,0 +1,217 @@
+%
+% Simple single-column CV 
+% Author: Georgios Karakasidis (geoph9)
+% Adapted from the works of:
+%   - Sofia JIJON
+%
+
+\documentclass[a4paper,10pt]{article}
+\usepackage[vmargin=0.6cm, hmargin=0.9cm]{geometry}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{hyphenat}
+\usepackage{fontawesome}
+
+\input{cv}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+% \raggedbottom
+% \raggedright
+% \setlength{\tabcolsep}{0in}
+
+
+
+%-------------------------------------------------------------------------------------------------------
+
+\begin{document}
+\thispagestyle{empty}
+\namesection{}{Firstname Lastname}{
+    City, Country \\
+    
+    \textcolor{ColorTwo}{\faPhone} 
+    +00 123456789
+    \hspace{0.2cm} | \hspace{0.2cm}
+    \textcolor{ColorTwo}{\faEnvelopeO} 
+    \myhref{mailto:email@email.com}{email@email.com}
+    \hspace{0.2cm} | \hspace{0.2cm}
+    \textcolor{ColorTwo}{\faGithub} 
+    \myhref{https://github.com/<username>}{<username>}
+    % \hspace{0.2cm} | \hspace{0.2cm}
+    % \textcolor{ColorTwo}{\faLinkedin} 
+    % \myhref{https://www.linkedin.com/in/<username>/}{<username>}
+}
+
+%----------- WORK EXPERIENCE -----------
+
+\raggedright
+\section*{Work Experience}
+\MyHorizontalRule
+  \vspace{-10pt}
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=-8pt]
+
+    \item \resumeSubheading
+      {Company1}{City1, Country1}
+      {Job Title 1}{Mar. 1901 \textbf{--} Present, Full-time}
+        \begin{itemize}
+            \vspace{10pt}
+            \hspace{-10pt}\textcolor{ColorOne}{$\circ$} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.\\
+            \hspace{-10pt}\textcolor{ColorOne}{$\circ$} Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.\\
+            \hspace{-10pt}\textcolor{ColorOne}{$\circ$} Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        \end{itemize}
+
+    \item \resumeSubheading
+      {Company2}{City2, Country2}
+      {Job Title 2}{Mar. 1900 \textbf{--} Mar. 1901, Full-time}
+        \begin{itemize}
+            \vspace{10pt}
+            \hspace{-10pt}\textcolor{ColorOne}{$\circ$} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.\\
+            \hspace{-10pt}\textcolor{ColorOne}{$\circ$} Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.\\
+            \hspace{-10pt}\textcolor{ColorOne}{$\circ$} Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        \end{itemize}
+
+    \item \vspace{-25pt}
+    \resumeSubheading
+      {}{}
+      {Internship 1}{Jan. 1900 \textbf{--} Mar 1900, Part-time}
+        \begin{itemize}
+            \vspace{10pt}
+            \hspace{-10pt}\textcolor{ColorOne}{$\circ$} Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+        \end{itemize}
+
+  \end{itemize}
+
+%----------- EDUCATION -----------
+\section*{Education}
+\MyHorizontalRule % Horizontal rule
+  \vspace{-10pt}
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=-8pt]
+    \item \resumeSubheading
+      {University Name}{City Name, Country}
+      {\hspace{10pt}\textcolor{ColorOne}{$\circ$}\hspace{3pt} MSc in Artificial Intelligence}{Sep. XXXX \textbf{--} Present}
+      
+    \item \vspace{20pt} \resumeSubheading
+      {University Name}{City Name, Country}
+      {\hspace{10pt}\textcolor{ColorOne}{$\circ$}\hspace{3pt} BSc in Computer Science; \textbf{Grade: 10/10, Excellent}}{Sep. XXXX \textbf{--} June XXXX}
+    
+  \end{itemize}
+
+
+%----------- SKILLS -----------
+
+\vspace{3pt}
+\section*{Skills}
+\MyHorizontalRule % Horizontal rule
+  % \vspace{-30pt}
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=-8pt]
+        
+    \item 
+        % \resumeSkillheading
+        % {Programming Languages:}{ Python, Python, Python, Python, Python}
+        \hspace{10pt}\textcolor{ColorOne}{$\circ$}\hspace{3pt} \textbf{Programming Languages:} Python, Python, Python, Python, Python
+
+    \item \hspace{10pt}\textcolor{ColorOne}{$\circ$}\hspace{3pt} \textbf{ML Libraries:} Pytorch, Scikit, Tensorflow
+
+    \item \hspace{10pt}\textcolor{ColorOne}{$\circ$}\hspace{3pt} \textbf{Web Development:} React
+        
+    % \item \resumeSkillheading
+    %     {ML Libraries:}{ Pytorch, Scikit, Tensorflow}
+        
+    % \item \resumeSkillheading
+    %     {Web Development:}{ React}
+    
+  \end{itemize}
+  \vspace{-12pt}
+
+
+\section*{Publications}
+\MyHorizontalRule % Horizontal rule
+  \vspace{2pt}
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=-8pt]
+    \item \begin{description}
+
+    	\item [\normalfont \textcolor{ColorOne}{2023}] \textbf{Lorem ipsum dolor sit amet, consectetur adipiscing elit}\\
+        \vspace{-2pt}\hspace{6pt}\underline{My Name}, Other Name. Submitted at the \textit{Machine Learning} journal.
+
+    	\item [\normalfont \textcolor{ColorOne}{2022}] \textbf{LSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium}\\
+        \vspace{-2pt}\hspace{6pt}\underline{My Name}, Other Name. Submitted at the \textit{Malorum} journal.
+	
+    \end{description}
+  \end{itemize}
+
+
+%----------- AWARDS & ACHIEVEMENTS -----------
+
+\section*{Awards \& Achievements}
+\MyHorizontalRule % Horizontal rule
+  \vspace{2pt}
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=-8pt]
+    \begin{description}
+    	\item [\normalfont \textcolor{ColorOne}{2023}] \textbf{Lorem Ipsum Institute}: Scholarship for MSc studies.
+    	\vspace{-8pt}
+    	 
+    	\item [\normalfont \textcolor{ColorOne}{2022}] \textbf{Lorem Ipsum Institute}: Scholarship for MSc studies 2.
+    	\vspace{-8pt}
+    	 
+    	\item [\normalfont \textcolor{ColorOne}{2021}] \textbf{Lorem Ipsum Institute}: Scholarship for MSc studies 3.
+    	\vspace{-8pt}
+    	 
+    	\item [\normalfont \textcolor{ColorOne}{2020}] \textbf{Lorem Ipsum Institute}: Scholarship for MSc studies 4.
+	
+    \end{description}
+  \end{itemize}
+
+%----------- OTHER -----------
+\vspace{20pt}
+\MyHorizontalRule % Horizontal rule
+\vspace{-3pt}
+\begin{multicols}{2}
+% \begin{center}
+    
+\hspace{85pt}\MyDummySection{Languages}
+\MyHorizontalRule % Horizontal rule
+\vspace{1pt}
+\begin{center}
+    \begin{tabular}{ll}
+    	English (Native) 		& \SkillBull{$\bullet \bullet \bullet \, \bullet$}\\
+    	English (C2 Level) 		& \SkillBull{$\bullet \bullet \bullet \, \circ$}\\
+    	English (B2 Level) 		& \SkillBull{$\bullet \bullet \circ \, \circ$}\\
+    \end{tabular}
+\end{center}
+
+\hspace{35pt}\MyDummySection{Interests}
+    % \small
+\vspace{1pt}
+\begin{center}
+    \begin{tabular}{l}
+        \hspace{-90pt}Cooking \\
+        \hspace{-90pt}Baking\\
+        \hspace{-90pt}Running\\
+    \end{tabular}
+\end{center}
+\end{multicols}
+
+%-------------------------------------------
+\end{document}

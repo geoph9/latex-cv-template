@@ -1,0 +1,208 @@
+% !TEX root = Simple-CV.tex
+%-------------------------------------------------------------------------------------------------------
+% Packages
+%-------------------------------------------------------------------------------------------------------
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{fontawesome}
+\usepackage{datetime}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=ColorTwo]{hyperref}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{sectsty}
+\usepackage{multicol}
+\usepackage{adjustbox}
+
+
+%----------------------------------------------------------------------------------------
+%	FONTS
+%----------------------------------------------------------------------------------------
+
+\usepackage{fontspec} % Required for specifying custom fonts in XeLaTeX
+
+\setmainfont[Color=primary, Path = fonts/lato/,BoldItalicFont=Lato-RegIta,BoldFont=Lato-Reg,ItalicFont=Lato-LigIta]{Lato-Lig} % The primary font for content text; defines bold, italic and bold-italic as well
+
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text, Path = fonts/raleway/]{Raleway-ExtraLight} % The font used where \sfffamily is called
+
+
+%----------------------------------------------------------------------------------------
+%	MAIN HEADING COMMAND
+%----------------------------------------------------------------------------------------
+
+\definecolor{headings}{HTML}{6A6A6A} % The color of the large sections
+\colorlet{shadecolor}{gray!40}
+
+\newcommand{\namesection}[3]{ % Defines the command for the main heading
+    \centering{ % Center the name
+        \fontsize{18pt}{40pt} % Font size
+        \fontspec[Path = fonts/lato/]{Lato-Hai}\selectfont #1 % First name font
+        \fontspec[Path = fonts/lato/]{Lato-Lig}\selectfont #2 % Last name font
+    } \\[1pt] % Whitespace between the name and contact information
+    \centering{ % Center the contact information
+        \color{headings} % Use the headings color
+        \fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{14pt}\selectfont #3\\
+        \makebox[280pt]{\color{shadecolor}\rule{350pt}{0.8pt}} % Horizontal rule
+    } % Contact information font
+    % \noindent\makebox[\linewidth]{\color{shadecolor}\rule{\paperwidth}{0.8pt}} % Horizontal rule
+    \vspace{-8pt} % Reduce whitespace after the rule slightly
+}
+
+
+%-------------------------------------------------------------------------------------------------------
+% Layout
+%-------------------------------------------------------------------------------------------------------
+\pagenumbering{gobble}
+\renewcommand{\baselinestretch}{1.45}
+\setlength{\parindent}{0pt}
+
+%
+% Color theme
+%
+\definecolor{ColorOne}{RGB}{0,110,140} 	% Blue
+\definecolor{ColorTwo}{RGB}{120,0,120} 	% Mauve
+%\definecolor{ColorTwo}{RGB}{140,100,0} 	% Gold
+
+\sectionfont{\color{ColorOne}} 
+\subsectionfont{\color{ColorOne}} 
+
+% \newcommand{\MyDummySection}{\color{ColorOne}}
+\newcommand*{\MyDummySection}[1]{{\fontsize{14pt}{1em}\color{ColorOne}{\textbf{#1}}}}
+
+%
+% Vertical line
+%
+\newcommand{\MyVerticalRule}{%
+	\textcolor{ColorOne}{\rule{0.4pt}{0.885\textheight}}
+}
+%
+% Horizonal line
+%
+\newcommand{\MyHorizontalRule}{%
+% 	\textcolor{ColorOne}{\rule{1pt}{0.85\textheight}}
+    \vspace{-15pt}
+	\textcolor{ColorOne}{\rule{515pt}{0.4pt}} % Horizontal rule
+}
+
+%
+% Update
+%
+\newcommand{\LastUpdate}{%
+\vfill
+\centering \small
+\textcolor{ColorOne}{Last updated: \monthname,~\the\year.}
+}
+
+%
+% Skip
+%
+\newcommand{\MySkip}{
+\vskip12pt
+}
+
+\newcommand{\MyBullet}{
+\textcolor{ColorOne}{$\circ$}
+}
+
+%
+% Format hyperrefs
+%
+\newcommand{\myhref}[2]{%
+\href{#1}{\textcolor{ColorTwo}{#2}}
+}
+%
+% Format skill bullets
+%
+\newcommand{\SkillBull}[1]{%
+\textcolor{ColorTwo}{#1}
+}
+
+
+
+% Taken from 2nd resume template
+\newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
+\newcommand{\cvsubsection}[1]{%
+  \vspace{\acvSectionContentTopSkip}
+  \vspace{-3mm}
+  \subsectionstyle{#1}
+  \phantomsection
+}
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeSkillheading}[2]{
+  \vspace{-2pt}\item
+    \begin{minipage}[c]{0.3\linewidth}
+        \begin{tabular}{l}
+          \textbf{#1} \\
+        \end{tabular}
+    \end{minipage}
+        % \vfill\null \columnbreak  % Break column for new section
+    \begin{minipage}[c]{0.7\linewidth}
+        \begin{tabular}{l}
+          #2 \\
+        \end{tabular}
+    \end{minipage}
+        \newline
+    % \end{multicols}
+    \vspace{-45pt}
+}
+
+
+\newcommand{\resumeSubSubheading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeEducationHeading}[6]{
+  \vspace{-10pt}
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeOrganizationHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{\small #2} \\
+      \textit{\small#3}
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
